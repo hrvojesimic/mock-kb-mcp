@@ -1,0 +1,10 @@
+[project]
+name = "gemini-kb-integration"
+version = "0.1.0"
+description = "Minimal Excel MCP server"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "fastmcp>=4,<5",
+    "openpyxl>=3.1,<4",
+]
