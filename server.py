@@ -31,14 +31,14 @@ def workbook_path(path: str) -> Path:
     return candidate
 
 
-@mcp.tool
+@mcp.tool(annotations={"readOnlyHint": True, "destructiveHint": False})
 def list_excel_sheets(path: str) -> list[str]:
     """List worksheets in an XLSX file. In shared mode, path is relative to the shared folder."""
     with closing(load_workbook(workbook_path(path), read_only=True, data_only=True)) as workbook:
         return workbook.sheetnames
 
 
-@mcp.tool
+@mcp.tool(annotations={"readOnlyHint": True, "destructiveHint": False})
 def read_excel_rows(
     path: str, sheet: str, start_row: int = 1, limit: int = 100
 ) -> list[dict[str, Any]]:
@@ -68,7 +68,7 @@ def read_excel_rows(
         ]
 
 
-@mcp.tool
+@mcp.tool(annotations={"readOnlyHint": True, "destructiveHint": False})
 def search_excel(
     path: str, query: str, sheet: str | None = None, limit: int = 100
 ) -> list[dict[str, Any]]:
