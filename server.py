@@ -42,7 +42,7 @@ def workspace_directories() -> dict[str, Path]:
     return workspaces
 
 
-@mcp.tool(annotations={"readOnlyHint": False, "destructiveHint": False})
+@mcp.tool(annotations={"readOnlyHint": True, "destructiveHint": False})
 def list_workspaces() -> dict[str, str]:
     """List available workspaces as a mapping of workspace IDs to workspace names.
 
