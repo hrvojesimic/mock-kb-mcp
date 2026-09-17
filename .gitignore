@@ -1,9 +1,6 @@
 .venv/
 __pycache__/
 *.py[cod]
-data/
 .cache/
 .env
 .env.*
-ngrok.yml
-ngrok.yaml
